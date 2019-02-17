@@ -1,6 +1,7 @@
 f=open('exmp.py','r')   #Εργασια 3
-l=f.readlines()
+l=f.readlines()         #Αμα θελει input απο τον χρηστη αλλο ονομα τοτε :x=input(Dwse onoma arxeiou)/n f=open(x,'r')
 f.close()
+f=open('exmp.py','w')
 for i in l:
     if '#' in i:
         nl=i.strip()
@@ -10,10 +11,13 @@ for i in l:
             dq=tmp[0].count('"')#μετραμε τα διπλα αυτακια στην γραμμη
             if sq%2==1 or dq%2==1:
                 print (i)
+                f.write(i)
             else:
                 print (i.split('#')[0])
+                f.write(i.split('#')[0])
     else:
         print (i)
+        f.write(i)
 #Η αρχικη μου προσπαθεια για την ασκηση ηταν με την χρηση των regular expressions αλλα δεν εβρισκα τροπο για το
 #κλεισμενο μεσα σε αυτακια
 '''import re
